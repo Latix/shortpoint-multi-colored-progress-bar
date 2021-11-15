@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shortpoint Progress Bar</title>
+</head>
+<style>
+    body {
+        background: #fff;
+        font-size: 10px;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .short__point-container {
+        margin: 0 auto;
+    }
+
+    .header, 
+    .short__point-btn {
+        display: flex;
+        justify-content: center;
+    }
+
+    .header h4 {
+        font-size: 24px;
+    }
+
+    .progress {
+        margin: 30px auto;
+        padding: 0;
+        width: 100%;
+        max-width: 500px;
+        background: #ECECEC;
+        border: none;
+        border-radius: 20px;
+        height: 20px;
+    }
+
+    .progress .progress__bar {
+        height: 100%;
+        width: 50%;
+        text-align: center;
+        border: 1px solid #000;
+        border-radius: 15px;
+        box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.5);
+        font-size: 14px;
+    }
+
+    .bg_green {
+        background: repeating-linear-gradient(
+            135deg,
+            #C2E585,
+            #C2E585 20px,
+            #BAE177 20px,
+            #BAE177 40px
+        );
+    }
+
+    .bg_red {
+        background: repeating-linear-gradient(
+            135deg,
+            #E7695B,
+            #E7695B 20px,
+            #FF9686 20px,
+            #FF9686 40px
+        );
+    }
+
+    .bg_blue {
+        background: repeating-linear-gradient(
+            135deg,
+            #699FBE,
+            #699FBE 20px,
+            #91D0F4 20px,
+            #91D0F4 40px
+        );
+    }
+
+    .bg_yellow {
+        background: repeating-linear-gradient(
+            135deg,
+            #F5C552,
+            #F5C552 20px,
+            #F9D366 20px,
+            #F9D366 40px
+        );
+    }
+
+    .bg_white {
+        background: repeating-linear-gradient(
+            135deg,
+            #fff,
+            #fff 20px,
+            #ECECEC 20px,
+            #ECECEC 40px
+        );
+    }
+
+    .short__point-btn button {
+        margin-top: 15px;
+        padding: 0.8em 1.6em;
+        border-radius: 0.4em;
+        border: none;
+        outline: none;
+        background-color: #3161d1;
+        transition: background-color .5s;
+        color: #fff;
+        font-size: 1.25em;
+        line-height: 1.5;
+        font-weight: 600;
+        cursor: pointer;
+        text-align: center;
+    }
+
+    .short__point-btn button:hover
+    {
+        background-color: #112576;
+    }
+
+    .w-100 {
+        width: 100% !important;
+    }
+</style>
+<body>
+    <div class="short__point-container">
+        <div class="header">
+            <h4>Multi-Colored Progress Bars</h4>
+        </div>
+        <div class="progress"> 
+            <div class="progress__bar bg_green">
+                50%
+            </div>
+        </div>
+        <div class="progress"> 
+            <div class="progress__bar bg_red">
+                50%
+            </div>
+        </div>
+        <div class="progress"> 
+            <div class="progress__bar bg_white">
+                50%
+            </div>
+        </div>
+        <div class="progress"> 
+            <div class="progress__bar bg_blue">
+                50%
+            </div>
+        </div>
+        <div class="progress"> 
+            <div class="progress__bar bg_yellow">
+                50%
+            </div>
+        </div>
+        <div class="short__point-btn">
+            <button id="finish-btn">Finish</button>
+        </div>
+    </div>
+
+    <script>
+        let progress_elements = document.querySelectorAll('.progress__bar');
+        
+        let finish_btn = document.getElementById("finish-btn");
+
+        finish_btn.addEventListener('click', (e) => {
+            progress_elements.forEach(elem => {
+                elem.innerHTML = "100%";
+                elem.classList.add('w-100');
+            });
+        });
+    </script>
+</body>
+</html>
